@@ -1,0 +1,426 @@
+<div class="row col4">
+    <div class="column short">
+        <h1>Fallout</h1>
+    </div>
+    <div class="column long">
+        <label class="character-name">Character name</label>
+        <input type="text" id="character-name" name="attr_character_name"
+            value="" class="character-name" />
+    </div>
+    <div class="column short">
+        <label>XP earned</label>
+        <input type="number" id="xp" name="attr_xp" value="" />
+
+        <label>XP next level</label>
+        <input type="number" id="xp-next-level" name="attr_xp_next_level"
+            value="" />
+    </div>
+    <div class="column short">
+        <label class="level">Level</label>
+        <input type="number" id="level" name="attr_level" value=""
+             class="level"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <label>Origin</label>
+        <select id="origin" name="attr_origin" class="origin">
+            <option value="brotherhood">Brotherhood of Steel</option>
+            <option value="ghoul">Ghoul</option>
+            <option value="mutant">Super Mutant</option>
+            <option value="robot">Mister Handy</option>
+            <option value="survivor">Survivor</option>
+            <option value="vault">Vault Dweller</option>
+        </select>
+        <input type="hidden" id="origin-choice" name="attr_origin_choice"
+            class="origin-choice" value="" />
+        <!-- origin panels -->
+        <div class="origin-brotherhood">
+            <h3>The Chain that Binds</h3>
+            <details>
+                <p>You gain one additional Tag skill, which must be one of Energy
+                    Weapons, Science, or Repair.</p>
+                <select id="brotherhood-tag" name="attr_brotherhood_tag">
+                    <option value="energy_weapons">Energy Weapons</option>
+                    <option value="science">Science</option>
+                    <option value="repair">Repair</option>
+                </select>
+                <p>As a member of the Brotherhood of Steel, you are bound by the
+                    chain of command: The Chain that Binds. You must carry out the
+                    orders of your immediate superiors, and you are responsible for
+                    your subordinate siblings. If you do not carry out your duty,
+                    you are expelled from the Brotherhood and your technology will
+                    be reclaimed—by any means necessary.<p>
+            </details>
+        </div>
+        <div class="origin-ghoul">
+            <h3>Necrotic Post-Human</h3>
+            <details>
+                <p>You are immune to radiation damage. In fact, you’re healed
+                    by it—you regain 1 HP for every 3 points of radiation
+                    damage inflicted upon you, and if you rest in an irradiated
+                    location, you may re-roll your dice pool when checking if
+                    your injuries heal. In addition, Survival becomes a Tag
+                    skill, increasing it by 2 ranks.<p>
+                <p>You age at a much-decreased rate, and you’re probably older
+                    than your unmutated companions—you may even have survived
+                    the Great War of 2077—but you’re sterile: “the first
+                    generation of ghouls is the last” as the saying goes.
+                    You may face discrimination from “smoothskins” (humans
+                    who aren’t ghouls), increasing the difficulty or
+                    complication range of Charisma tests depending on your
+                    opponent’s beliefs.<p>
+            </details>
+        </div>
+        <div class="origin-mutant">
+            <h3>Forced Evolution</h3>
+            <details>
+                <p>Your initial Strength and Endurance attributes are increased
+                    by +2 each, and your maximum Strength and Endurance are
+                    increased to 12, but your maximum Intelligence and
+                    Charisma are both reduced to 6. You may not have more
+                    than 4 ranks in any skill. You are completely immune to
+                    radiation and poison damage.</p>
+                <p>You stand over seven feet tall, and your body is bulky and
+                    muscular. Your skin is green, yellow, or grey, regardless
+                    of what color it was when you were human. You do not seem
+                    to age, but you are sterile.</p>
+                <p>You can only wear armor which has been made to fit a super
+                    mutant.</p>
+            </details>
+        </div>
+        <div class="origin-robot">
+            <h3>Mister Handy</h3>
+        </div>
+        <div class="origin-survivor">
+            <h3>Survivor</h3>
+        </div>
+        <div class="origin-vault">
+            <h3>Vault Dweller</h3>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="row col7">
+    <div class="column">
+        <label>Strength</label>
+        <input type="number" id="strength" name="attr_strength" value="5"
+            min="4" max="10" />
+    </div>
+    <div class="column">
+        <label>Perception</label>
+        <input type="number" id="perception" name="attr_perception" value="5"
+            min="4" max="10" />
+    </div>
+    <div class="column">
+        <label>Endurance</label>
+        <input type="number" id="endurance" name="attr_endurance" value="5"
+            min="4" max="10" />
+    </div>
+    <div class="column">
+        <label>Charisma</label>
+        <input type="number" id="charisma" name="attr_charisma" value="5"
+            min="4" max="10" />
+    </div>
+    <div class="column">
+        <label>Intelligence</label>
+        <input type="number" id="intelligence" name="attr_intelligence"
+            value="5" min="4" max="10" />
+    </div>
+    <div class="column">
+        <label>Agility</label>
+        <input type="number" id="agility" name="attr_agility" value="5"
+            min="4" max="10" />
+    </div>
+    <div class="column">
+        <label>Luck</label>
+        <input type="number" id="luck" name="attr_luck" value="5"
+            min="4" max="10" />
+
+        <label>Luck points</label>
+        <input type="number" id="luck-points" name="attr_luck_points"
+            value="" />
+    </div>
+</div>
+
+<hr />
+
+<div class="row col2">
+    <div class="column short">
+        <h2>Skills</h2>
+        <table class="skills">
+            <tr>
+                <th>Name</th>
+                <th>Stat</th>
+                <th>Tag</th>
+                <th>Rank</th>
+            </tr>
+            <tr>
+                <td><label>Athletics</label></td>
+                <td>STR</td>
+                <td><input type="checkbox" id="athletics-tag"
+                    name="attr_athetics_tag" value="1" /></td>
+                <td><input type="number" id="athletics" name="attr_athletics"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Barter</label></td>
+                <td>CHA</td>
+                <td><input type="checkbox" id="barter-tag"
+                    name="attr_barter_tag" value="1" /></td>
+                <td><input type="number" id="barter" name="attr_barter"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Big Guns</label></td>
+                <td>END</td>
+                <td><input type="checkbox" id="big-guns-tag"
+                    name="attr_big_guns_tag" value="1" /></td>
+                <td><input type="number" id="big-guns" name="attr_big_guns"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Energy Weapons</label></td>
+                <td>PER</td>
+                <td><input type="checkbox" id="energy-weapons-tag"
+                    name="attr_energy_weapons_tag" value="1" /></td>
+                <td><input type="number" id="energy-weapons"
+                    name="attr_energy_weapons" value=""
+                    /></td>
+            </tr>
+            <tr>
+                <td><label>Explosives</label></td>
+                <td>PER</td>
+                <td><input type="checkbox" id="explosives-tag"
+                    name="attr_explosives_tag" value="1" /></td>
+                <td><input type="number" id="explosives" name="attr_explosives"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Lockpick</label></td>
+                <td>PER</td>
+                <td><input type="checkbox" id="lockpick-tag"
+                    name="attr_lockpick_tag" value="1" /></td>
+                <td><input type="number" id="lockpick" name="attr_lockpick"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Medicine</label></td>
+                <td>INT</td>
+                <td><input type="checkbox" id="medicine-tag"
+                    name="attr_medicine_tag" value="1" /></td>
+                <td><input type="number" id="medicine" name="attr_medicine"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Melee Weapons</label></td>
+                <td>STR</td>
+                <td><input type="checkbox" id="melee-weapons-tag"
+                    name="attr_melee_weapons_tag" value="1" /></td>
+                <td><input type="number" id="melee-weapons"
+                    name="attr_melee_weapons" value=""
+                    /></td>
+            </tr>
+            <tr>
+                <td><label>Pilot</label></td>
+                <td>PER</td>
+                <td><input type="checkbox" id="pilot-tag"
+                    name="attr_pilot_tag" value="1" /></td>
+                <td><input type="number" id="pilot" name="attr_pilot"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Repair</label></td>
+                <td>INT</td>
+                <td><input type="checkbox" id="repair-tag"
+                    name="attr_repair_tag" value="1" /></td>
+                <td><input type="number" id="repair" name="attr_repair"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Science</label></td>
+                <td>INT</td>
+                <td><input type="checkbox" id="science-tag"
+                    name="attr_science_tag" value="1" /></td>
+                <td><input type="number" id="science" name="attr_science"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Small Guns</label></td>
+                <td>AGI</td>
+                <td><input type="checkbox" id="small-guns-tag"
+                    name="attr_small_guns_tag" value="1" /></td>
+                <td><input type="number" id="small-guns"
+                    name="attr_small_guns" value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Sneak</label></td>
+                <td>AGI</td>
+                <td><input type="checkbox" id="=sneak-tag"
+                    name="attr_sneak_tag" value="1" /></td>
+                <td><input type="number" id="sneak" name="attr_sneak"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Speech</label></td>
+                <td>CHA</td>
+                <td><input type="checkbox" id="speech-tag"
+                    name="attr_speech_tag" value="1" /></td>
+                <td><input type="number" id="speech" name="attr_speech"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Survival</label></td>
+                <td>END</td>
+                <td><input type="checkbox" id="survival-tag"
+                    name="attr_survival_tag" value="1" /></td>
+                <td><input type="number" id="survival" name="attr_survival"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Throwing</label></td>
+                <td>AGI</td>
+                <td><input type="checkbox" id="throwing-tag"
+                    name="attr_throwing_tag" value="1" /></td>
+                <td><input type="number" id="throwing" name="attr_throwing"
+                    value="" /></td>
+            </tr>
+            <tr>
+                <td><label>Unarmed</label></td>
+                <td>STR</td>
+                <td><input type="checkbox" id="unarmed-tag"
+                    name="attr_unarmed_tag" value="1" /></td>
+                <td><input type="number" id="unarmed" name="attr_unarmed"
+                    value="" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="column long">
+        <h2>Combat</h2>
+
+        <div class="row col3">
+            <div class="column">
+                <label>Melee damage</label>
+                <input type="text" id="melee-damage" name="attr_melee_damage"
+                    value="" />
+            </div>
+            <div class="column">
+                <label>Defense</label>
+                <input type="text" id="defense" name="attr_defense"
+                    value="" />
+            </div>
+            <div class="column">
+                <label>Initiative</label>
+                <input type="text" id="initiative" name="attr_initiative"
+                    value="" />
+            </div>
+        </div>
+
+        <div class="row col3">
+            <div class="column">
+                <label>Poison DR</label>
+                <input type="text" id="poison-dr" name="attr_poison_dr"
+                    value="" />
+            </div>
+            <div class="column">
+                <table class="locations">
+                    <tr>
+                        <th span="4">Head (1-2)</th>
+                    </tr>
+                    <tr>
+                        <td><label>Phys. DR</label></td>
+                        <td><input type="number" id="head-pdr"
+                            name="attr_head_pdr" value=""
+                            /></td>
+                        <td><label>Rad. DR</label></td>
+                        <td><input type="number" id="head-rdr"
+                            name="attr_head_rdr" value=""
+                            /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="column">
+                Health
+                <label>Maximum HP</label>
+                <input type="number" id="maximum-hp" name="attr_maximum_hp"
+                    value="" />
+
+                <label>Current HP</label>
+                <input type="number" id="current-hp" name="attr_current_hp"
+                    value="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/worker">
+
+on("change:origin sheet:opened", function() {
+    getAttrs(["ORIGIN", "ORIGIN_CHOICE"], function(values) {
+        let origin = values.ORIGIN;
+        let update = {"origin_choice": origin};
+        switch(origin) {
+            case "ghoul":
+                update["survival_tag"] = 1;
+                break;
+            case "mutant":
+                update["strength_max"] = 12;
+                break;
+        }
+        setAttrs(update);
+    });
+});
+
+on("change:brotherhood_tag sheet:opened", function() {
+    getAttrs(["ORIGIN", "BROTHERHOOD_TAG"], function(values) {
+        let origin = values.ORIGIN;
+        if (origin == "brotherhood") {
+            let tag = values.BROTHERHOOD_TAG;
+            let update = {};
+            console.log("TAG[[["+ tag +"]]]");
+            switch(tag) {
+                case "energy_weapons":
+                    update["energy_weapons_tag"] = 1;
+                    break;
+                case "science":
+                    update["science_tag"] = 1;
+                    break;
+                case "repair":
+                    update["repair_tag"] = 1;
+                    break;
+            }
+            setAttrs(update);
+        }
+    });
+});
+
+on("change:xp sheet:opened", function() {
+  getAttrs(["XP","XP_NEXT_LEVEL"], function(values) {
+    let xp = parseInt(values.XP)||0;
+    let level = 2;
+    while ( xp > ((level * (level-1) / 2) * 100) ) {
+        level++;
+    }
+    let xp_next_level = (level * (level-1) / 2) * 100;
+    setAttrs({
+      "level": level - 1,
+      "xp_next_level": xp_next_level
+    });
+  });
+});
+
+on("change:tag sheet:opened", function() {
+  getAttrs(["TAG","RANK"], function(values) {
+    let tag = parseInt(values.XP)||0;
+    let rank = parseInt(values.XP)||0;
+    if (rank == 0 && tag == 1) rank = 2;
+    setAttrs({
+      "rank": rank
+    });
+  });
+});
+</script>

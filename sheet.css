@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.charactersheet .row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.column {
+    float: left;
+    width: 100%;
+    padding-right: 5px;
+    box-sizing: border-box;
+}
+
+.col2 .column {
+    width: 50%;
+}
+
+.col2 .short {
+    width: 33%;
+}
+
+.col2 .long {
+    width: 66%;
+}
+
+.col3 .column {
+    width: 33%;
+}
+
+.col3 .short {
+    width: 20%;
+}
+
+.col3 .long {
+    width: 40%;
+}
+
+.col4 .column {
+    width: 25%;
+}
+
+.col4 .short {
+    width: 20%;
+}
+
+.col4 .long {
+    width: 40%;
+}
+
+.col7 .column {
+    width: 14%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row .column label {
+    font: bold 10px 'Roboto', sans-serif;
+	display: inline-block;
+    float: left;
+	width: 50%;
+    border: 1px solid #000;
+    padding: 5px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.row .column label.character-name,
+.row .column label.level,
+.col7 .column label {
+    width: 100%;
+}
+
+.row .column label.level,
+.col7 .column label,
+.row .column input.level,
+.col7 .column input {
+    text-align: center;
+}
+
+.row .column input,
+.row .column select {
+    font: 10px 'Roboto', sans-serif;
+	display: inline-block;
+    float: left;
+	width: 50%;
+    border: 1px solid #000;
+    border-radius: 0px;
+    padding: 5px;
+    margin: 0px 0px 5px 0px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000;
+    outline: none;
+}
+
+.row .column input.character-name,
+.row .column input.level,
+.col7 .column input {
+    width: 100%;
+    font-size: 20px;
+}
+
+body .ui-dialog .charsheet input[type=number] {
+	display: inline-block;
+	width: 50%;
+}
+
+body .ui-dialog .charsheet input[type=number].level,
+body .ui-dialog .charsheet .col7 input[type=number] {
+	width: 100%;
+    text-align: center;
+}
+
+table.skills {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.skills th,
+.skills td {
+    font: 10px 'Roboto', sans-serif;
+    text-align: center;
+    width: 20%;
+    border: none;
+    margin: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.skills th {
+    padding: 5px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.skills td {
+    padding: 0px 0px 0px 5px;
+    background: #faeade;
+    color: #000;
+}
+
+.skills tr:nth-child(even) td {
+    background: #f4d6bc;
+}
+
+.skills th:first-child,
+.skills td:first-child {
+    text-align: left;
+    width: 40%;
+}
+
+.skills th,
+.skills td {
+    width: 25%;
+}
+
+.row .column .skills td label {
+    font: normal 10px 'Roboto', sans-serif;
+	display: inline-block;
+    float: none;
+	width: auto;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    background: none;
+    color: #000;
+    text-transform: none;
+}
+
+.row .column .skills td input {
+    font: 10px 'Roboto', sans-serif;
+	display: inline-block;
+    float: none;
+	width: 100%;
+    border: 1px solid #000;
+    border-radius: 0px;
+    padding: 5px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000;
+    outline: none;
+}
+
+.origin-brotherhood,
+.origin-ghoul,
+.origin-mutant,
+.origin-robot,
+.origin-survivor,
+.origin-vault {
+    display: none;
+}
+
+.origin-choice[value="brotherhood"] ~ div.origin-brotherhood,
+.origin-choice[value="ghoul"] ~ div.origin-ghoul,
+.origin-choice[value="mutant"] ~ div.origin-mutant,
+.origin-choice[value="robot"] ~ div.origin-robot,
+.origin-choice[value="survivor"] ~ div.origin-survivor,
+.origin-choice[value="vault"] ~ div.origin-vault {
+    display: block;
+}
